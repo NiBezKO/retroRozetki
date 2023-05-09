@@ -54,42 +54,36 @@
 
 // }
 
-// /* Tabs    */
-
-//   let tabsButtons = document.querySelector(".tabs__buttons");
-//   let tabs = document.querySelectorAll(".tabs-buttons__menu");
-//   let tabsContent = document.querySelectorAll(".tabs-content__show");
-
-//   function hideTabContent() {
-//     tabsContent.forEach(items => {
-//       items.style.display = "none";
-//    });
-
-//    tabs.forEach(item => {
-//      item.classList.remove("_active");
-//    })
-//   }
-
-//   function showContentTab (i = 0) {
-//     tabsContent[i].style.display = "block";
-//     tabs[i].classList.add("_active");
-//   }
-
-//   hideTabContent();
-//   showContentTab();
-
-//   tabsButtons.addEventListener('click', (event) => {
-//      const target = event.target;
-
-//      if ( target && target.classList.contains("tabs-buttons__menu")) {
-//       tabs.forEach((item, i) => {
-//          if ( target == item )
-//          hideTabContent();
-//          showContentTab(i);
-//       })
-//      }
-//   })
-
+const btnUp = {
+  el: document.querySelector('.btn-up'),
+  show() {
+    // удалим у кнопки класс btn-up_hide
+    this.el.classList.remove('btn-up_hide');
+  },
+  hide() {
+    // добавим к кнопке класс btn-up_hide
+    this.el.classList.add('btn-up_hide');
+  },
+  addEventListener() {
+    // при прокрутке содержимого страницы
+    window.addEventListener('scroll', () => {
+      // определяем величину прокрутки
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      // если страница прокручена больше чем на 400px, то делаем кнопку видимой, иначе скрываем
+      scrollY > 400 ? this.show() : this.hide();
+    });
+    // при нажатии на кнопку .btn-up
+    document.querySelector('.btn-up').onclick = () => {
+      // переместим в начало страницы
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+    };
+  },
+};
+btnUp.addEventListener();
 // /* slider-swiper */
 
 // var swiper = new Swiper(".mySwiper", {
