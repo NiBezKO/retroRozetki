@@ -45,6 +45,64 @@ ul {
   box-sizing: border-box;
 }
 
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  background-color: #424242;
+  padding: 8px 15px;
+}
+.header-top_loaction {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+}
+.header-top span {
+  color: #ffffff;
+  margin-left: 10px;
+}
+.header-top__menu {
+  display: flex;
+}
+.header-top__menu .menu-item {
+  margin-right: 10px;
+}
+
+.top-menu .rating {
+  position: relative;
+}
+.top-menu .rating span {
+  position: absolute;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+.top-menu .cart {
+  position: relative;
+}
+.top-menu .cart span {
+  position: absolute;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.nav-list {
+  display: flex;
+  list-style-type: none;
+}
+.nav-list__item {
+  text-decoration: none;
+  margin-right: 10px;
+}
+.nav__item {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+}
+
 .header__bottom {
   width: 100%;
   display: flex;

@@ -1,3 +1,74 @@
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  background-color: $headerBackGround;
+  padding: 8px 15px;
+
+  &_loaction {
+    display: flex;
+    font-family: $fontFamilyRoboto;
+  }
+
+  span {
+    color: $colorTextWhite;
+    margin-left: 10px;
+  }
+
+  &__menu {
+    display: flex;
+
+    .menu-item {
+      margin-right: 10px;
+    }
+  }
+}
+
+.top-menu {
+  .rating {
+    position: relative;
+
+    span {
+      position: absolute;
+      margin-top: -10px;
+      margin-left: -10px;
+    }
+  }
+
+  .cart {
+    position: relative;
+
+    span {
+      position: absolute;
+      margin-top: -10px;
+      margin-left: -10px;
+    }
+  }
+}
+
+.nav {
+  &-list {
+    display: flex;
+    list-style-type: none;
+
+    &__item {
+      text-decoration: none;
+      margin-right: 10px;
+    }
+  }
+
+  &__item {
+    text-decoration: none;
+    color: $colorTextWhite;
+    font-family: $fontFamilyRoboto;
+  }
+}
+
 .header__bottom {
   width: 100%;
   display: flex;
